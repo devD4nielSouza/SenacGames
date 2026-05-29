@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 // =============================================================================
-// SenacGames.Domain - Entidade Category
+// SenacGames.Domain - Entidade Category (Categoria)
 // =============================================================================
 // Esta classe representa uma categoria de jogos no sistema.
 // Exemplos: "Ação", "RPG", "Corrida", "Terror", etc.
