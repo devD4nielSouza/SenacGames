@@ -1,25 +1,50 @@
+// =============================================================================
+// SenacGames.UI - HomeController
+// =============================================================================
+// 📌 CONCEITO: Controller MVC
+// Um Controller recebe requisições HTTP e retorna Views (páginas HTML).
+// Cada método público (Action) corresponde a uma URL.
+// Exemplo: HomeController.Index() → URL: /Home/Index ou /
+// =============================================================================
+
 using Microsoft.AspNetCore.Mvc;
-using SenacGames.UI.Models;
-using System.Diagnostics;
+using SenacGames.Application.Interfaces;
+using SenacGames.Application.ViewModels;
 
 namespace SenacGames.UI.Controllers
 {
+    /// <summary>
+    /// Controller da página inicial (Home).
+    /// Área PÚBLICA — qualquer usuário pode acessar.
+    /// </summary>
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IGameService _gameService;
+        private readonly ICategoryService _categoryService;
+
+        // 📌 CONCEITO: Dependency Injection no Controller
+        // Os serviços são injetados automaticamente pelo .NET
+        public HomeController(IGameService gameService, ICategoryService categoryService)
         {
-            return View();
+            _gameService = gameService;
+            _categoryService = categoryService;
         }
 
-        public IActionResult Privacy()
+        /// <summary>
+        /// Página inicial — exibe games em destaque e categorias.
+        /// URL: / ou /Home/Index
+        /// </summary>
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
+            // Monta o ViewModel com os dados que a View precisa
+            var viewModel = new HomeViewModel
+            {
+                FeaturedGames = await _gameService.GetFeaturedAsync(),
+                Categories = await _categoryService.GetAllAsync(),
+                RecentGames = await _gameService.GetAllAsync()
+            };
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(viewModel);
         }
     }
 }

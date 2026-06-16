@@ -3610,14 +3610,15 @@
     },
     "SenacGames.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../SenacGames.Infraestructure/SenacGames.Infrastructure.csproj",
-      "msbuildProject": "../SenacGames.Infraestructure/SenacGames.Infrastructure.csproj"
+      "path": "../SenacGames.Infrastructure/SenacGames.Infrastructure.csproj",
+      "msbuildProject": "../SenacGames.Infrastructure/SenacGames.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "Microsoft.AspNetCore.OpenApi >= 10.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.8",
+      "Microsoft.OpenApi >= 2.4.1",
       "SenacGames.Application >= 1.0.0",
       "SenacGames.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 10.1.7"
@@ -3659,8 +3660,8 @@
             "C:\\Users\\daniel.osbibiano\\source\\repos\\SenacGames\\SenacGames.Application\\SenacGames.Application.csproj": {
               "projectPath": "C:\\Users\\daniel.osbibiano\\source\\repos\\SenacGames\\SenacGames.Application\\SenacGames.Application.csproj"
             },
-            "C:\\Users\\daniel.osbibiano\\source\\repos\\SenacGames\\SenacGames.Infraestructure\\SenacGames.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\daniel.osbibiano\\source\\repos\\SenacGames\\SenacGames.Infraestructure\\SenacGames.Infrastructure.csproj"
+            "C:\\Users\\daniel.osbibiano\\source\\repos\\SenacGames\\SenacGames.Infrastructure\\SenacGames.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\daniel.osbibiano\\source\\repos\\SenacGames\\SenacGames.Infrastructure\\SenacGames.Infrastructure.csproj"
             }
           }
         }
@@ -3690,6 +3691,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[10.0.8, )"
+          },
+          "Microsoft.OpenApi": {
+            "target": "Package",
+            "version": "[2.4.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-// =============================================================================
+﻿// =============================================================================
 // SenacGames.Domain - Interface ICategoryRepository
 // =============================================================================
 // Contrato do repositório de categorias.

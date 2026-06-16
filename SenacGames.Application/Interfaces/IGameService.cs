@@ -1,13 +1,29 @@
-﻿using SenacGames.Application.DTOs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SenacGames.Application.DTOs;
+
+// =============================================================================
+// SenacGames.Application - Interface IGameService
+// =============================================================================
+// 📌 CONCEITO IMPORTANTE: Service Layer (Camada de Serviço)
+// A camada Application contém os SERVIÇOS que orquestram as operações.
+// Ela é a "ponte" entre os Controllers e os Repositories.
+//
+// Fluxo: Controller → Service → Repository → Banco de Dados
+//
+// O Service é responsável por:
+// - Orquestrar chamadas ao repositório
+// - Mapear Entidades para DTOs (e vice-versa)
+// - Aplicar regras de aplicação (validações, etc.)
+// =============================================================================
 
 namespace SenacGames.Application.Interfaces
 {
+
     /// <summary>
     /// Contrato de serviço de Games.
-    /// Define as operaçoes de negocio disponiveis para o game.
+    /// Define as operações de negócio disponíveis para o game.
     /// </summary>
     public interface IGameService
     {

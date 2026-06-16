@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-// =============================================================================
+﻿// =============================================================================
 // SenacGames.Domain - Entidade Game
 // =============================================================================
 // Esta classe representa a entidade principal do sistema: um jogo (Game).
